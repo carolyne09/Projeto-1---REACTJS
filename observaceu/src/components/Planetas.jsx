@@ -60,6 +60,28 @@ function Planetas ({ planetas }) {
                                         ? "Sim"
                                         : "Não"}
                                 </p>
+                                <p>
+                                    Retrógrado:{" "}
+                                    {planeta.retrogrado
+                                        ? "Sim"
+                                        : "Não"}
+                                </p>
+                                <p>
+                                    Constelação: {planeta.constelacao}
+                                </p>
+                                <p>
+                                    Magnitude:{" "}
+                                    {planeta.magnitude != null
+                                        ? planeta.magnitude
+                                        : "Não disponível"}
+                                </p>
+
+                                <p>
+                                    Distância:{" "}
+                                    {planeta.distancia != null
+                                        ? `${Math.round(planeta.distancia).toLocaleString("pt-BR")} km`
+                                        : "Não disponível"}
+                                </p>
                             </Card.Body>
                         </Card>
                     </Col>
