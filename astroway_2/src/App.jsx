@@ -44,24 +44,12 @@ function App() {
         setHoroscopo(null);
 
         try {
-            /*
-             * POST
-             * Gera o mapa natal.
-             */
             const mapa = await gerarMapaAstral(dados);
 
             setMapaAstral(mapa);
 
-            /*
-             * Descobrimos o signo solar a partir
-             * da longitude do Sol retornada pelo mapa.
-             */
             const signoSolar = getSunSignFromChart(mapa);
 
-            /*
-             * GETs executados depois que o mapa
-             * foi gerado.
-             */
             const resultados = await Promise.allSettled([
                 buscarFaseLua(dados.date),
                 buscarHoroscopoDiario(signoSolar.slug, dados.date)
