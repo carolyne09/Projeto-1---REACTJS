@@ -57,8 +57,6 @@ function SynastryForm({ onSubmit, loading }) {
         }
 
         const dadosPessoa1 = {
-            name: pessoa1.name.trim(),
-            city: cidadePessoa1.nome,
             date: pessoa1.date,
             time: `${pessoa1.time}:00`,
             timezoneOffset: Number(cidadePessoa1.timezoneOffset),
@@ -67,8 +65,6 @@ function SynastryForm({ onSubmit, loading }) {
         };
 
         const dadosPessoa2 = {
-            name: pessoa2.name.trim(),
-            city: cidadePessoa2.nome,
             date: pessoa2.date,
             time: `${pessoa2.time}:00`,
             timezoneOffset: Number(cidadePessoa2.timezoneOffset),
