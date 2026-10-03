@@ -166,13 +166,6 @@ function App() {
 
                 </Container>
             </main>
-
-            <footer className="text-center py-4 mt-5">
-                <small className="text-muted">
-                    Projeto desenvolvido em React utilizando
-                    a AstroWay API.
-                </small>
-            </footer>
         </>
     );
 }
