@@ -2,7 +2,6 @@ import Card from "react-bootstrap/Card";
 
 import PlanetList from "./PlanetList";
 import HouseList from "./HouseList";
-import AspectList from "./AspectList";
 
 import {
     formatarGrau,
@@ -12,7 +11,6 @@ import {
 function ChartSection({ mapaAstral }) {
     const planetas = mapaAstral?.planets || [];
     const casas = mapaAstral?.houses || null;
-    const aspectos = mapaAstral?.aspects || [];
 
     const ascendente = casas?.ascendant;
     const meioCeu = casas?.mc;
@@ -78,10 +76,6 @@ function ChartSection({ mapaAstral }) {
 
             <HouseList
                 casas={casas}
-            />
-
-            <AspectList
-                aspectos={aspectos}
             />
 
         </section>
