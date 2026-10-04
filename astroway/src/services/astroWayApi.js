@@ -104,8 +104,6 @@ export async function fazerSynastry(pessoa1, pessoa2) {
             },
             body: JSON.stringify({
                 chart1: {
-                    //name: pessoa1.name || "",
-                    //city: pessoa1.city || "",
                     date: pessoa1.date,
                     time: pessoa1.time,
                     timezoneOffset: pessoa1.timezoneOffset,
@@ -113,8 +111,6 @@ export async function fazerSynastry(pessoa1, pessoa2) {
                     longitude: pessoa1.longitude
                 },
                 chart2: {
-                    //name: pessoa2.name || "",
-                    //city: pessoa2.city || "",
                     date: pessoa2.date,
                     time: pessoa2.time,
                     timezoneOffset: pessoa2.timezoneOffset,
