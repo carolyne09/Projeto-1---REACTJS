@@ -81,25 +81,25 @@ As requisições são realizadas diretamente pelo frontend.
 
 #### Mapa Astral
 
-```text
+```
 POST /v1/public/chart
 ````
 
 #### Fase da Lua
 
-```text
+```
 GET /v1/public/moon-phase
 ````
 
 #### Horóscopo Diário
 
-```text
+```
 GET /v1/public/horoscope/daily
 ````
 
 #### Sinastria
 
-```text
+```
 POST /v1/public/synastry
 ````
 
@@ -109,7 +109,7 @@ As requisições são realizadas utilizando a função fetch() do JavaScript.
 
 Exemplo simplificado de uma requisição POST:
 
-```text
+```
 const response = await fetch(
     `${BASE_URL}/public/synastry`,
     {
@@ -142,7 +142,14 @@ npm install
 npm run dev
 ````
 9. Acesse no navegador
+
 O Vite exibirá no terminal o endereço local da aplicação, normalmente:
 ````
 http://localhost:5173
 ````
+👥 Equipe
+
+Projeto desenvolvido por:
+
+- Maria Carolyne Nogueira
+- Maxine Lourenço da Silva
