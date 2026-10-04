@@ -5,6 +5,8 @@ import Alert from "react-bootstrap/Alert";
 
 import Header from "./components/Header";
 import BirthForm from "./components/BirthForm";
+import SynastryForm from "./components/SynastryForm";
+import SynastryCard from "./components/SynastryCard";
 import ChartSection from "./components/ChartSection";
 import MoonPhaseCard from "./components/MoonPhaseCard";
 import HoroscopeCard from "./components/HoroscopeCard";
@@ -14,7 +16,8 @@ import ErrorMessage from "./components/ErrorMessage";
 import {
     gerarMapaAstral,
     buscarFaseLua,
-    buscarHoroscopoDiario
+    buscarHoroscopoDiario,
+    fazerSynastry
 } from "./services/astroWayApi";
 
 import {
@@ -25,6 +28,7 @@ function App() {
     const [mapaAstral, setMapaAstral] = useState(null);
     const [faseLua, setFaseLua] = useState(null);
     const [horoscopo, setHoroscopo] = useState(null);
+    const [synastry, setSynastry] = useState(null);
 
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState("");
@@ -40,24 +44,12 @@ function App() {
         setHoroscopo(null);
 
         try {
-            /*
-             * POST
-             * Gera o mapa natal.
-             */
             const mapa = await gerarMapaAstral(dados);
 
             setMapaAstral(mapa);
 
-            /*
-             * Descobrimos o signo solar a partir
-             * da longitude do Sol retornada pelo mapa.
-             */
             const signoSolar = getSunSignFromChart(mapa);
 
-            /*
-             * GETs executados depois que o mapa
-             * foi gerado.
-             */
             const resultados = await Promise.allSettled([
                 buscarFaseLua(dados.date),
                 buscarHoroscopoDiario(signoSolar.slug, dados.date)
@@ -96,6 +88,25 @@ function App() {
         }
     }
 
+    async function handleSynastrySubmit({ pessoa1, pessoa2 }) {
+        setLoading(true);
+        setErro("");
+
+        try {
+            const resultado = await fazerSynastry(
+                pessoa1,
+                pessoa2
+            );
+
+            console.log("Resultado da Synastry:", resultado);
+            setSynastry(resultado);
+        } catch (error) {
+            setErro(error.message);
+        } finally {
+            setLoading(false);
+        }
+    }
+
     return (
         <>
             <Header />
@@ -121,6 +132,10 @@ function App() {
                     <section className="mb-5">
                         <BirthForm
                             onSubmit={handleSubmit}
+                            loading={loading}
+                        />
+                        <SynastryForm
+                            onSubmit={handleSynastrySubmit}
                             loading={loading}
                         />
                     </section>
@@ -160,6 +175,14 @@ function App() {
                         <section className="mt-5">
                             <HoroscopeCard
                                 horoscopo={horoscopo}
+                            />
+                        </section>
+                    )}
+
+                    {!loading && synastry && (
+                        <section className="mt-5">
+                            <SynastryCard
+                                synastry={synastry}
                             />
                         </section>
                     )}
