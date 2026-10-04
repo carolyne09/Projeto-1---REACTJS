@@ -55,7 +55,6 @@ A resposta pode apresentar informações como:
 - Pontuação de compatibilidade;
 - Classificação;
 - Quantidade de aspectos;
-- Outros dados retornados pela API.
 
 ## 🛠️ Tecnologias utilizadas
 
