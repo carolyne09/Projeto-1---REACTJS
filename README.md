@@ -124,3 +124,25 @@ const response = await fetch(
 
 As respostas da API são convertidas para JSON e posteriormente utilizadas pelos componentes React para atualizar a interface.
 
+⚙️ Como executar o projeto
+1. Clone o repositório
+````
+git clone URL_DO_REPOSITORIO
+````
+3. Entre na pasta do projeto
+````
+cd nome-do-projeto
+````
+5. Instale as dependências
+````
+npm install
+````
+7. Execute o projeto
+````
+npm run dev
+````
+9. Acesse no navegador
+O Vite exibirá no terminal o endereço local da aplicação, normalmente:
+````
+http://localhost:5173
+````
