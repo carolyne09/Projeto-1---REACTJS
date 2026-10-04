@@ -1,5 +1,5 @@
 # ASTROWAY
-🌌 AstroWay
+##🌌 AstroWay
 
 Aplicação web desenvolvida em React.js para apresentar informações e funcionalidades relacionadas à astrologia por meio do consumo de uma API externa.
 
