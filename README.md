@@ -4,8 +4,6 @@ Aplicação web desenvolvida em React.js para apresentar informações e funcion
 
 O projeto foi desenvolvido como uma Single Page Application (SPA), utilizando requisições HTTP para obter e apresentar os dados retornados pela API.
 
----
-
 ## 📖 Sobre o projeto
 
 O AstroWay é uma aplicação web que permite ao usuário consultar informações astrológicas a partir de seus dados de nascimento.
@@ -18,8 +16,6 @@ Entre as funcionalidades desenvolvidas estão:
 - Consulta da fase da Lua;
 - Consulta de horóscopo diário;
 - Sinastria entre duas pessoas.
-
----
 
 ## ✨ Funcionalidades
 
@@ -34,23 +30,17 @@ O usuário informa seus dados de nascimento, como:
 
 A aplicação envia esses dados para a API e apresenta as informações retornadas.
 
----
-
 ### 🌙 Fase da Lua
 
 Permite consultar a fase da Lua para uma determinada data.
 
 A consulta é realizada utilizando uma requisição `GET` para a API.
 
----
-
 ### ♈ Horóscopo Diário
 
 Permite consultar o horóscopo diário de um signo em uma determinada data.
 
 O usuário seleciona o signo e a data desejada, e a aplicação realiza a consulta na API.
-
----
 
 ### ❤️ Sinastria
 
@@ -67,8 +57,6 @@ A resposta pode apresentar informações como:
 - Quantidade de aspectos;
 - Outros dados retornados pela API.
 
----
-
 ## 🛠️ Tecnologias utilizadas
 
 - React.js
@@ -78,8 +66,6 @@ A resposta pode apresentar informações como:
 - CSS
 - Fetch API
 - API AstroWay
-
----
 
 ## 🌐 API utilizada
 
