@@ -123,3 +123,4 @@ const response = await fetch(
 ````
 
 As respostas da API são convertidas para JSON e posteriormente utilizadas pelos componentes React para atualizar a interface.
+
