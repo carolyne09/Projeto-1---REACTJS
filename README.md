@@ -83,4 +83,43 @@ As requisições são realizadas diretamente pelo frontend.
 
 ```text
 POST /v1/public/chart
+````
+
+#### Fase da Lua
+
+```text
+GET /v1/public/moon-phase
+````
+
+#### Horóscopo Diário
+
+```text
+GET /v1/public/horoscope/daily
+````
+
+#### Sinastria
+
+```text
 POST /v1/public/synastry
+````
+
+🔄 Comunicação com a API
+
+As requisições são realizadas utilizando a função fetch() do JavaScript.
+
+Exemplo simplificado de uma requisição POST:
+
+```text
+const response = await fetch(
+    `${BASE_URL}/public/synastry`,
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dados)
+    }
+);
+````
+
+As respostas da API são convertidas para JSON e posteriormente utilizadas pelos componentes React para atualizar a interface.
